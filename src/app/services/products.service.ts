@@ -12,6 +12,7 @@ export class ProductsService {
   private urlSaveProduct = 'http://127.0.0.1:8000/api/create';
   private urlDeleteProduct = 'http://127.0.0.1:8000/api/delete/';
   private urlUpdateProduct = 'http://127.0.0.1:8000/api/update/';
+  private urlUpdateStock = 'http://127.0.0.1:8000/api/update/stock/';
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +21,6 @@ export class ProductsService {
   }
 
   public saveProduct(product: Product){
-    console.log('service',product)
     return this.http.post(this.urlSaveProduct,product);
   }
 
@@ -29,7 +29,10 @@ export class ProductsService {
   }
 
   public editProduct(item: Product): Observable<editSuccess>{
-    console.log("item", item.nameProduct)
     return this.http.put<editSuccess>(this.urlUpdateProduct+item.id, item);
+  }
+
+  public updateStock(id:number, stock:number,update:any){
+    return this.http.put(this.urlUpdateStock+id+'/'+stock,update)
   }
 }

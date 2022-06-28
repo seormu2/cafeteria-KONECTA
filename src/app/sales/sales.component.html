@@ -1,0 +1,22 @@
+
+<app-nav-bar></app-nav-bar>
+<div class="container mt-5">
+  <div class="alert alert-danger" role="alert">
+    {{alert}}
+  </div>
+    <div class="row">
+        <div class="card w-50 " *ngFor="let item of listProducts">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{item.nameProduct}}</h5>
+              <p class="card-text">Referencia: {{item.referency}}</p>
+              <p class="card-text">Precio: ${{item.price}}</p>
+              <p class="card-text">Peso: {{item.weight}}</p>
+              <p class="card-text">stock: {{item.stock}}</p>
+              <div class="text-center">
+                <button class="btn btn-success" (click)="addProduct(item)">+</button><span class="p-4">{{item.total}}</span><button type="button" class="btn btn-danger" (click)="deleteProduct(item)">-</button>
+              </div>
+              <a class="btn btn-primary mt-1" (click)="buyProduct(item)">Comprar</a>
+            </div>
+        </div>
+    </div>
+</div>

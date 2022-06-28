@@ -9,6 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
+import { SalesComponent } from './sales/sales.component';
+import { Routes } from '@angular/router';
+import { ProductComponent } from './product/product.component';
+
+const routes: Routes = [
+  {path: '', component: SalesComponent},
+  {path: 'sales', component: SalesComponent},
+  {path: 'products', component: AppComponent},
+  
+];
 
 @NgModule({
   declarations: [
@@ -16,7 +26,9 @@ import { AlertComponent } from './alert/alert.component';
     NavBarComponent,
     TableProductsComponent,
     ProductFormComponent,
-    AlertComponent
+    AlertComponent,
+    SalesComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

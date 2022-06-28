@@ -1,11 +1,13 @@
 export interface Product {
-    id?: string,
+    id?: number,
     nameProduct?: string,
     referency?: string,
     price?: number,
     weight?: number,
     stock?: number,
     idCategory?: number,
+    total?: number
+    totalPrice?: number
 }
 
 export interface SaveProduct {

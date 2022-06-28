@@ -1,0 +1,8 @@
+<app-nav-bar></app-nav-bar>
+
+<app-product-form [productInput]="productInput"
+    [setForm]="setFormBoolean"
+    [updateBoolean]="validateAction"></app-product-form>
+
+<app-table-products (productOutput)="obtenerProductOutput($event)"
+(setForm)="setForm()"></app-table-products>

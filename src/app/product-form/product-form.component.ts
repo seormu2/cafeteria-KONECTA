@@ -40,7 +40,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   saveProduct(){
-    this.product = {
+    const product = {
       "nameProduct": this.form.value.nameProduct,
       "referency": this.form.value.referency,
       "price": this.form.value.price,
@@ -48,7 +48,7 @@ export class ProductFormComponent implements OnInit {
       "stock": this.form.value.stock,
       "idCategory": this.form.value.category,
     };
-    this.service.saveProduct(this.product).subscribe(resultado =>{
+    this.service.saveProduct(product).subscribe(resultado =>{
       
     })
   }
