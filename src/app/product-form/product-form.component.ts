@@ -65,7 +65,6 @@ export class ProductFormComponent implements OnInit {
     };
     this.service.editProduct(this.product).subscribe(
       result =>{
-        console.log("error",result)
         this.product = {
           "nameProduct": "",
           "referency": "",

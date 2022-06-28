@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   }
 
   productInput: Product = {};
-  setFormBoolean: boolean = true;
+  setFormBoolean: boolean = false;
   validateAction: boolean = false;
 
 
@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit {
     }else{
       this.setFormBoolean = true;
     }
-    this.validateAction = false
+    this.validateAction = true
   }
 
 }
