@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <h2>Listado de productos</h2>
+  <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Referencia</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Stock</th>
+          <th scope="col">Categoria</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listProducts">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.nameProduct}}</td>
+          <td>{{item.referency}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.weight}}</td>
+          <td>{{item.stock}}</td>
+          <td>{{item.idCategory}}</td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="editProduct(item)">Editar </button>
+
+            <button type="button" class="btn btn-danger" (click)="showModal(item)"
+            data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Opción</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Deseas eliminar el producto {{product.nameProduct}}?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteProduct()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</div>
