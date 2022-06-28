@@ -29,7 +29,6 @@ export class ProductComponent implements OnInit {
       this.setFormBoolean = true;
     }
     this.validateAction = false
-    console.log("VALOR ",this.setFormBoolean)
   }
 
 }

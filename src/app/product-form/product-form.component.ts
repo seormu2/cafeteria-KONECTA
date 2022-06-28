@@ -63,10 +63,17 @@ export class ProductFormComponent implements OnInit {
       "stock": this.form.value.stock,
       "idCategory": this.form.value.category,
     };
-    console.log("PRODUCT ", this.product)
     this.service.editProduct(this.product).subscribe(
       result =>{
         console.log("error",result)
+        this.product = {
+          "nameProduct": "",
+          "referency": "",
+          "price": 0,
+          "weight": 0,
+          "stock": 0,
+          "idCategory": 0,
+        };
       }
     )
   }
