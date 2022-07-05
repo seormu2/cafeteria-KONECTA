@@ -16,7 +16,7 @@ export class TableProductsComponent implements OnInit {
   @Output() setForm  = new EventEmitter<any>;
   @Output() validateAction = new EventEmitter<any>;
 
-  constructor(private serice: ProductsService) { }
+  constructor(private service: ProductsService) { }
 
   ngOnInit(): void {
     this.listProductsAll();
@@ -27,14 +27,14 @@ export class TableProductsComponent implements OnInit {
   }
 
   deleteProduct(){
-    this.serice.deleteProduct(this.product.id).subscribe( response =>{
+    this.service.deleteProduct(this.product.id).subscribe( response =>{
       this.listProductsAll();
       this.setFieldsForm();
   });
   }
 
   listProductsAll(){
-    this.serice.listProducts().subscribe(products => {
+    this.service.listProducts().subscribe(products => {
       this.listProducts = products
     }
     )

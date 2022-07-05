@@ -21,12 +21,15 @@
                     <label for="exampleInputPassword1" class="form-label">Stock</label>
                     <input type="number"  [(ngModel)]="product.stock"  class="form-control" id="stock" formControlName="stock">
                 </div>
-                <div class="mb-3 col-lg-6">
-                    <label for="exampleInputPassword1" class="form-label">Categoria</label>
-                    <input type="number"  [(ngModel)]="product.idCategory"class="form-control" id="category" formControlName="category">
-                </div>
+                <select class=" mb-3 col-lg-6" style="border: none;">
+                    <option *ngFor="let item of categories">{{item.category}}</option>
+                </select>
             </div>
         </form>
-    <button type="submit" class="btn btn-primary" (click)="saveProduct()" >Guardar</button>
-    <button type="submit" class="btn btn-primary" (click)="editProduct()" >Editar</button>
+        <div class="alert alert-danger" role="alert" *ngIf="validationAlert">
+            {{alert}}
+        </div>
+    <button type="submit" class="btn btn-primary" *ngIf="!validateButton" (click)="saveProduct()" >Guardar</button>
+    <button type="submit" class="btn btn-primary" *ngIf="validateButton" (click)="editProduct()" >Editar</button>
+    <button type="button" class="btn btn-secondary" *ngIf="validateButton" (click)="cancel()">Cancelar</button>
 </div>

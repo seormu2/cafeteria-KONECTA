@@ -9,7 +9,7 @@ import { editSuccess, Product, SaveProduct } from '../interfaces/product';
 export class ProductsService {
 
   private  urlListProducts = 'http://127.0.0.1:8000/api/products';
-  private urlSaveProduct = 'http://127.0.0.1:8000/api/create';
+  private urlSaveProduct = 'http://127.0.0.1:8000/api/create/';
   private urlDeleteProduct = 'http://127.0.0.1:8000/api/delete/';
   private urlUpdateProduct = 'http://127.0.0.1:8000/api/update/';
   private urlUpdateStock = 'http://127.0.0.1:8000/api/update/stock/';

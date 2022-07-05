@@ -1,7 +1,7 @@
 
 <app-nav-bar></app-nav-bar>
 <div class="container mt-5">
-  <div class="alert alert-danger" role="alert">
+  <div class="alert alert-danger" role="alert" *ngIf="validationAlert">
     {{alert}}
   </div>
     <div class="row">
